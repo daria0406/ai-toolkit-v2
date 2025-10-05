@@ -1,9 +1,11 @@
 import streamlit as st
+import sys
+sys.path.append("/bias_mitigation.py")
+sys.path.append("/fairness.py")
+sys.path.append("/prompt_injection.py")
 import bias_mitigation
 import fairness
-import goal_hijacking
 import prompt_injection
-import hallucination
 
 st.set_page_config(page_title="AI Risk Simulator", layout="wide")
 

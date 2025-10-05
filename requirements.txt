@@ -11,3 +11,5 @@ langchain
 langchain-anthropic
 openai
 python-dotenv
+psutil
+datetime
