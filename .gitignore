@@ -1,0 +1,10 @@
+.venv/
+.env
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore OS-specific files
+.DS_Store
+.devcontainer/
