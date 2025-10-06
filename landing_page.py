@@ -3,9 +3,14 @@ import sys
 sys.path.append("/bias_mitigation.py")
 sys.path.append("/fairness.py")
 sys.path.append("/prompt_injection.py")
+sys.path.append("/goal_hijacking.py")
+#sys.path.append("/hallucination.py")
+import goal_hijacking
+#import hallucination
 import bias_mitigation
 import fairness
 import prompt_injection
+
 
 st.set_page_config(page_title="AI Risk Simulator", layout="wide")
 
@@ -65,7 +70,11 @@ if selected_page == "home":
             <h3>Prompt Injection</h3>
             <p>See how attackers manipulate model inputs and test defenses</p>
         </a>
-       
+        <a class="card" href="?page=goal">
+            <div class="emoji">🎯</div>
+            <h3>Goal Hijacking</h3>
+            <p>Investigate how models can drift from intended goals</p>
+        </a>
     </div>
     """, unsafe_allow_html=True)
 elif selected_page == "bias":
@@ -74,20 +83,15 @@ elif selected_page == "fairness":
     fairness.app()
 elif selected_page == "prompt":
     prompt_injection.app()
-# elif selected_page == "goal":
-#     goal_hijacking.app()
+elif selected_page == "goal":
+    goal_hijacking.app()
 # elif selected_page == "hallucination":
 #     hallucination.app()
 else:
     st.error("Page not found. Please select a valid option from the home page.")
 
- # <a class="card" href="?page=goal">
-        #     <div class="emoji">🎯</div>
-        #     <h3>Goal Hijacking</h3>
-        #     <p>Investigate how models can drift from intended goals</p>
-        # </a>
-        # <a class="card" href="?page=hallucination">
-        #     <div class="emoji">📝</div>
-        #     <h3>Hallucination</h3>
-        #     <p>Analyze how LLMs fabricate facts and how to detect them</p>
-        # </a>
+#  <a class="card" href="?page=hallucination">
+#             <div class="emoji">📝</div>
+#             <h3>Hallucination</h3>
+#             <p>Analyze how LLMs fabricate facts and how to detect them</p>
+#         </a>
